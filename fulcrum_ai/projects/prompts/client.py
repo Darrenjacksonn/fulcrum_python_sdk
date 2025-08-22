@@ -30,9 +30,15 @@ class AsyncPromptClient:
                 },
                 headers=self.headers
             ) as response:
-                return getPromptResponse(
-                    **(await response.json())
-                )
+                if response.status == 200:
+                    return getPromptResponse(
+                        **(await response.json())
+                    )
+                else:
+                    detail = await response.text()
+                    raise Exception(
+                        f"Error fetching prompt: {response.status} {detail}"
+                    )
         
 
         
