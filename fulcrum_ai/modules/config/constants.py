@@ -9,3 +9,8 @@ else:
     BASE_URL: str = "https://fulcrum-backend-base.onrender.com/base/api"
 
 
+__all__ = [
+    "ENVIRONMENT",
+    "EnvironmentType",
+    "BASE_URL"
+]
