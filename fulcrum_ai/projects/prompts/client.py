@@ -19,7 +19,7 @@ class AsyncPromptClient:
         self,
         prompt_id: str,
         version_id: Optional[str] = None,
-    ) -> str:
+    ) -> getPromptResponse:
         
         async with aiohttp.ClientSession() as session:
             async with session.post(
