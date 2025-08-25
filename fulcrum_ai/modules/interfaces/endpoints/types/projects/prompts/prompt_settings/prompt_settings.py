@@ -62,17 +62,3 @@ class PromptSettings(BaseModel):
             The response format to use for the prompt.
         """
     )
-
-
-class getPromptResponse(BaseModel):
-    prompt: str = Field(
-        description="""
-            The text prompt.
-        """
-    )
-
-    prompt_settings: PromptSettings = Field(
-        description="""
-            The settings to use for the prompt.
-        """
-    )

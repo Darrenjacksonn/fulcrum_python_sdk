@@ -3,8 +3,12 @@ from typing import Optional
 
 from fulcrum_ai.modules.config.constants import BASE_URL
 
-from fulcrum_ai.modules.interfaces import (
+from fulcrum_ai.modules.interfaces.endpoints import (
     getPromptResponse
+)
+
+from .logs import (
+    AsyncPromptLogsClient
 )
 
 class AsyncPromptClient:
@@ -14,6 +18,8 @@ class AsyncPromptClient:
         headers:dict
     ):
         self.headers = headers
+
+        self.logs = AsyncPromptLogsClient(self.headers)
     
     async def get_prompt(
         self,
@@ -39,7 +45,3 @@ class AsyncPromptClient:
                     raise Exception(
                         f"Error fetching prompt: {response.status} {detail}"
                     )
-        
-
-        
-
