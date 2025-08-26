@@ -29,7 +29,7 @@ class LLMMessageToolCall(BaseModel):
 class LLMMessage(BaseModel):
     role: LLMMessageRole
     annotations: Optional[list[str]] = Field(
-        default = []
+        default = None
     )
     content: Optional[str | list[_Content]] = Field(
         default = None

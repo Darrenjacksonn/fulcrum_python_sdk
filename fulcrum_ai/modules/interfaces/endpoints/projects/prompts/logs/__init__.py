@@ -1,7 +1,16 @@
 from .create import (
-    CreateLogRequest
+    CreateLogRequest,
+    CreateLiveLogRequest,
+    CreateLiveLogResponse
+)
+
+from .update import (
+    UpdateLogRequest
 )
 
 __all__ = [
-    "CreateLogRequest"
+    "CreateLogRequest",
+    "CreateLiveLogRequest",
+    "CreateLiveLogResponse",
+    "UpdateLogRequest"
 ]

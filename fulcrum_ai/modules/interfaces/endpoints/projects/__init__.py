@@ -1,9 +1,16 @@
 from .prompts import (
     getPromptResponse, 
-    CreateLogRequest
+    CreateLogRequest,
+    CreateLiveLogRequest,
+    CreateLiveLogResponse,
+    UpdateLogRequest
 )
 
 __all__ = [
     "getPromptResponse",
-    "CreateLogRequest"
+    
+    "CreateLogRequest",
+    "CreateLiveLogRequest",
+    "CreateLiveLogResponse",
+    "UpdateLogRequest"
 ]
