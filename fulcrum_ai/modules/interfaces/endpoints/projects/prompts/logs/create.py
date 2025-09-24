@@ -11,7 +11,12 @@ from fulcrum_ai.modules.interfaces.endpoints.types import (
 
 class CreateLogRequest(BaseModel):
     prompt_id:str = Field(...)
-    version_id:str = Field(...)
+    version_id:Optional[str] = Field(
+        default=None,
+        description="""
+            The version ID of the prompt.
+        """
+    )
 
     messages:list[LLMMessage] = Field(
         ...,

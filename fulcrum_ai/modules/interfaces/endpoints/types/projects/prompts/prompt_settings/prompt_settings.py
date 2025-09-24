@@ -8,6 +8,8 @@ from typing import Optional
 
 class Models(str, Enum):
     gpt_5 = "gpt-5"
+    gpt_4o = "gpt-4o"
+    o3_mini = "o3-mini"
 
     claude_4_sonnet = "claude-4-sonnet"
 
@@ -19,7 +21,11 @@ MODEL_PROVIDER_MAP: dict[
     Providers, 
     list[Models]
 ] = {
-    Providers.openai: [Models.gpt_5],
+    Providers.openai: [
+        Models.gpt_5, 
+        Models.o3_mini, 
+        Models.gpt_4o
+    ],
     Providers.anthropic: [Models.claude_4_sonnet],
 }
 

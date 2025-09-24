@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from typing import Optional
 
 from ....prompts.prompt_settings.prompt_settings import (
     Providers
@@ -67,7 +68,7 @@ class TokenDetails(BaseModel):
         """
     )
     
-    raw_provider_token_output: dict = Field(
+    raw_provider_token_output: Optional[dict] = Field(
         default=None,
         description="""
             Raw usage data from the 
