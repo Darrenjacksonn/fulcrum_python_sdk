@@ -3,11 +3,11 @@ powershell -ExecutionPolicy Bypass -File "aws_auth.ps1"
 setlocal enableextensions enabledelayedexpansion
 
 REM Capture the API key from PowerShell
-for /f "tokens=2 delims==" %%i in ('powershell -ExecutionPolicy Bypass -File "aws_auth.ps1" ^| findstr "TESTPYPI_API_KEY="') do set TESTPYPI_API_KEY=%%i
+for /f "tokens=2 delims==" %%i in ('powershell -ExecutionPolicy Bypass -File "aws_auth.ps1" ^| findstr "PYPI_API_KEY="') do set PYPI_API_KEY=%%i
 
-REM Require TESTPYPI_API_KEY to be set in the environment
-if not defined TESTPYPI_API_KEY (
-  echo ERROR: TESTPYPI_API_KEY environment variable is not set.
+REM Require PYPI_API_KEY to be set in the environment
+if not defined PYPI_API_KEY (
+  echo ERROR: PYPI_API_KEY environment variable is not set.
   echo Please set it, then re-run this script.
   exit /b 1
 )
@@ -56,8 +56,8 @@ python -m twine check dist\*
 if errorlevel 1 goto :error
 
 echo.
-echo Uploading to TestPyPI...
-python -m twine upload --repository testpypi dist\* -u __token__ -p %TESTPYPI_API_KEY%
+echo Uploading to PyPI...
+python -m twine upload --repository pypi dist\* -u __token__ -p %PYPI_API_KEY%
 if errorlevel 1 goto :error
 
 echo.

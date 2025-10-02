@@ -25,5 +25,6 @@ __all__ = [
     "PromptSettings",
     "Models",
     "Providers",
+    "MODEL_PROVIDER_MAP",
     "ResponseFormats"
 ]   

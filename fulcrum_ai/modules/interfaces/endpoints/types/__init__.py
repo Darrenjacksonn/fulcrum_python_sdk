@@ -25,6 +25,7 @@ from .projects import (
     PromptSettings,
     Models,
     Providers,
+    MODEL_PROVIDER_MAP,
     ResponseFormats
 )
 
@@ -48,5 +49,6 @@ __all__ = [
     "PromptSettings",
     "Models",
     "Providers",
+    "MODEL_PROVIDER_MAP",
     "ResponseFormats"
 ]   

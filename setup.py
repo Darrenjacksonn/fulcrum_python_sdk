@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="fulcrum-ai", 
-    version="0.0.1.dev4",
+    version="0.0.1.dev5",
     packages=find_packages(include=["fulcrum_ai", "fulcrum_ai.*"]),
     description="Public pythonsdk for Fulcrum AI.",
     long_description=long_description,
